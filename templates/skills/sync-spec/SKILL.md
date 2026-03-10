@@ -8,8 +8,9 @@ disable-model-invocation: true
 Goal: Synchronize user's raw thoughts into the structured technical specification.
 
 ## Workflow
-1. Read `.context/RAW_REQUIREMENTS.md` and `.context/SPEC.md`.
-2. Extract new/changed items from RAW.
+1. Identify the **nearest** `.context/` directory based on the active file or user's target.
+2. Read `[Context Root]/.context/RAW_REQUIREMENTS.md` and `[Context Root]/.context/SPEC.md`.
+3. Extract new/changed items from RAW.
 3. **Analyze & Question (Critical Step)**:
    - Identify if the user's goal or motivation is unclear. **STOP AND DISCUSS.**
    - **Trade-off Analysis**: Is this the right time to do this? Is the scope appropriate?

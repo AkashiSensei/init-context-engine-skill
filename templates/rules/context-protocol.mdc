@@ -7,6 +7,7 @@ alwaysApply: true
 - **Language**: English for internal documents (specs, tasks, rules); Simplified Chinese for user communication.
 
 # Memory Index (.context/)
+- **Proximity Rule**: AI must find the **nearest** `.context/` relative to the current file or task.
 - `RAW_REQUIREMENTS.md`: Draft/Experimental ideas and feature requests (User-owned).
 - `SPEC.md`: Technical Source of Truth and architecture definitions (AI-refined).
 - `ROADMAP.md`: Milestones and key architectural decision log.

@@ -8,8 +8,9 @@ disable-model-invocation: true
 Goal: Create a high-focus "cache" in `ACTIVE_TASK.md` for a specific feature or fix.
 
 ## Workflow
-1. Read `.context/SPEC.md` and `.context/ROADMAP.md`.
-2. Analyze the current project state and the user's latest request.
+1. Identify the **nearest** `.context/` directory based on the user's request.
+2. Read `[Context Root]/.context/SPEC.md` and `[Context Root]/.context/ROADMAP.md`.
+3. Analyze the current project state and the user's latest request.
 3. **Analyze & Challenge (Critical Step)**:
    - Identify if the goal or motivation is unclear. **STOP AND DISCUSS.**
    - **Trade-off Analysis**: Is this the right time to do this? Is the scope appropriate?

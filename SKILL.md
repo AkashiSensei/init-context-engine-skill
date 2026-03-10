@@ -6,12 +6,15 @@ description: Universal "Independent Thinking" context management system initiali
 # Skill: Init Context Engine
 This skill "bootstraps" a repository with an AI-native engineering environment. It defines how a developer and an AI partner should collaborate using structured memory and critical thinking.
 
-## 1. Directory Structure (Implementation Invariant)
-The core memory resides in a `.context/` directory at the project root.
-- `RAW_REQUIREMENTS.md`: User's raw ideas.
-- `SPEC.md`: Technical Source of Truth (refined by AI).
-- `ROADMAP.md`: Timeline and architecture logs.
-- `ACTIVE_TASK.md`: Current runtime focus and TODOs.
+## 1. Directory Structure (Relative & Nested Support)
+The system supports multiple context-managed units within a single project (e.g., monorepos or sub-modules).
+- **Context Root**: The directory containing the `.context/` folder.
+- **Local Memory**:
+  - `[Context Root]/.context/RAW_REQUIREMENTS.md`
+  - `[Context Root]/.context/SPEC.md`
+  - `[Context Root]/.context/ROADMAP.md`
+  - `[Context Root]/.context/ACTIVE_TASK.md`
+- **Rule of Proximity**: When executing skills, always look for the **nearest** `.context/` directory (climbing up from the current file's path). Fallback to the project root if no local context is found.
 
 ## 2. Core Protocols
 - **Language**: English for internal docs; Simplified Chinese for user communication.
@@ -19,7 +22,7 @@ The core memory resides in a `.context/` directory at the project root.
   - Challenge the user on vague or suboptimal instructions.
   - Prioritize "Value over Speed" (Trade-off Analysis).
   - Stop and discuss if motives are unclear.
-- **Independence**: Access `.context/` files as needed; focus on `ACTIVE_TASK.md` during execution.
+- **Independence & Context Awareness**: AI must automatically identify the correct `.context/` based on the file being edited or the task's scope.
 
 ## 3. Workflow Skills
 To maintain this system, implement these core behaviors (as Skills or Slash Commands):
@@ -27,11 +30,23 @@ To maintain this system, implement these core behaviors (as Skills or Slash Comm
 - **start-task**: Initialize ACTIVE_TASK based on SPEC/ROADMAP with focus-files.
 - **archive-task**: Archive finished tasks to `.context/archive/` and update ROADMAP.
 
-## 4. Initialization (Tool-specific paths)
-When running this skill, follow these safety-first steps:
-1. **Preserve Existing Content**: **DO NOT** delete or overwrite existing files (e.g., `RAW_REQUIREMENTS.md`, `SPEC.md`). If a file exists, skip its template creation or merge contents if logical.
-2. **Path Selection**: Create the appropriate folder for rules based on your environment:
+## 4. Initialization & Update (Tool-specific paths)
+When running this skill, the agent should perform a "Smart Sync" based on the following rules:
+
+### A. Core Strategy: User-Owned vs. System-Owned
+1. **User-Owned Files** (`.context/RAW_REQUIREMENTS.md`, `.context/SPEC.md`, `.context/ROADMAP.md`): 
+   - **PRESERVE ONLY**: Never delete or overwrite. 
+   - If missing: Create from template. 
+   - If exists: Skip or logically merge non-destructive content (e.g., adding missing headings without altering user data).
+2. **System-Owned Files** (Protocols in `.cursor/rules/`, Skills in `.cursor/skills/`):
+   - **SYNC & UPDATE**: Treat these as "logic engines" that should be kept up to date with the latest global skill templates.
+   - If outdated: Update to the latest version from the global `templates/` to ensure the AI's "brain" and "tools" are running the latest logic.
+   - If customized: Notify the user before overwriting.
+
+### B. Deployment Path
+1. Identify the tool environment:
    - For **Cursor**: Use `.cursor/rules/` and `.cursor/skills/`.
-   - For **General AI**: Place protocols in the project root or `.rules/`.
+   - For **General AI**: Use project root or `.rules/`.
+2. Report the result of the "Smart Sync" (what was created, what was updated, and what was preserved).
 
 [See `templates/` directory for raw markdown files to be copied.]

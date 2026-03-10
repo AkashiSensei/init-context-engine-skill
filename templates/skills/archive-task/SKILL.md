@@ -8,8 +8,9 @@ disable-model-invocation: true
 Cleanup the workspace after a task is completed.
 
 ## Workflow
-1. Read `.context/ACTIVE_TASK.md` and `.context/ROADMAP.md`.
-2. Move content of `ACTIVE_TASK.md` to `.context/archive/YYYYMMDD_TaskName.md`.
-3. Update `ROADMAP.md`: Add a single-line entry: `Date | TaskName | Key Impact`.
-4. Reset `ACTIVE_TASK.md`: Keep only the minimalist template for the next task.
-5. Output: "Task archived. Roadmap updated."
+1. Identify the **nearest** `.context/` directory.
+2. Read `[Context Root]/.context/ACTIVE_TASK.md` and `[Context Root]/.context/ROADMAP.md`.
+3. Move content of `ACTIVE_TASK.md` to `[Context Root]/.context/archive/YYYYMMDD_TaskName.md`.
+4. Update `ROADMAP.md`: Add a single-line entry: `Date | TaskName | Key Impact`.
+5. Reset `ACTIVE_TASK.md`: Keep only the minimalist template for the next task.
+6. Output: "Task archived in [Local Path]. Roadmap updated."
