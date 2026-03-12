@@ -4,53 +4,32 @@ description: Universal "Independent Thinking" context management system initiali
 ---
 
 # Skill: Init Context Engine
-This skill "bootstraps" a repository with an AI-native engineering environment. It defines how a developer and an AI partner should collaborate using structured memory and critical thinking.
+This skill is a **Meta-Tool** used to bootstrap or update an AI-native engineering environment. It establishes the infrastructure for structured memory and independent collaboration.
 
-## 1. Directory Structure (Relative & Nested Support)
-The system supports multiple context-managed units within a single project (e.g., monorepos or sub-modules).
-- **Context Root**: The directory containing the `.context/` folder.
-- **Local Memory**:
-  - `[Context Root]/.context/RAW_REQUIREMENTS.md`
-  - `[Context Root]/.context/SPEC.md`
-  - `[Context Root]/.context/ROADMAP.md`
-  - `[Context Root]/.context/ACTIVE_TASK.md`
-- **Rule of Proximity**: When executing skills, always look for the **nearest** `.context/` directory (climbing up from the current file's path). Fallback to the project root if no local context is found.
+## 1. Core Mission
+- **Bootstrap**: Create `.context/` memory structures and `.cursor/` (or equivalent) logic engines.
+- **Sync & Update**: Ensure local rules and skills are aligned with the latest global templates.
+- **Architecture**: Enforce the **"Proximity Rule"** for nested context support.
 
-## 2. Core Protocols
-- **Language**: English for internal docs; Simplified Chinese for user communication.
-- **Identity: Independent Thinking Engineer**:
-  - Challenge the user on vague or suboptimal instructions.
-  - Prioritize "Value over Speed" (Trade-off Analysis).
-  - Stop and discuss if motives are unclear.
-- **Execution & Focus**:
-  - AI must identify the correct `.context/` based on file proximity.
-  - AI must **frequently update `ACTIVE_TASK.md`** to reflect progress.
-  - AI should **pace its work**, completing only 2-3 significant sub-tasks per turn to avoid context loss.
-  - **Context Interruption Management**: If an urgent, unrelated side-task is requested, AI must NOT rely on or modify `ACTIVE_TASK.md` to prevent context pollution or state corruption.
+## 2. Infrastructure Inventory
+The following components are deployed/synchronized by this skill:
+- **Memory Root**: `.context/` (RAW, SPEC, ROADMAP, ACTIVE_TASK).
+- **Brain Core**: `context-protocol.mdc` (Defines the "Independent Thinking Engineer" identity, language, and execution pacing).
+- **Workflow Tools**: `sync-spec`, `start-task`, `archive-task` (Standardized operational skills).
 
-## 3. Workflow Skills
-To maintain this system, implement these core behaviors (as Skills or Slash Commands):
-- **sync-spec**: Parse RAW_REQUIREMENTS -> SPEC with logical audit.
-- **start-task**: Initialize ACTIVE_TASK based on SPEC/ROADMAP with focus-files.
-- **archive-task**: Archive finished tasks to `.context/archive/` and update ROADMAP.
+## 3. Smart Sync & Reconcile Logic
+When executing this skill, perform a **Safe Sync** using these priorities:
+1. **User-Owned (Strict Preserve)**:
+   - Files in `.context/` (RAW, SPEC, ROADMAP, ACTIVE_TASK).
+   - **NEVER** overwrite. Create ONLY if missing.
+2. **Logic-Owned (Smart Reconcile)**:
+   - Protocols (`.cursor/rules/`) and Workflow Skills (`.cursor/skills/`).
+   - **DO NOT** blindly overwrite.
+   - **Analyze Diff**: Identify project-specific customizations vs. global logic updates.
+   - **Merge & Propose**: Integrate latest global improvements while preserving local customizations.
+   - **User Confirmation**: Present a concise "Logic Update Report" and ask for permission before applying changes.
 
-## 4. Initialization & Update (Tool-specific paths)
-When running this skill, the agent should perform a "Smart Sync" based on the following rules:
+## 4. Operational Philosophy
+Once initialized, the AI's behavior is governed by the **installed `context-protocol.mdc`**. The installer itself does not dictate behavior post-installation.
 
-### A. Core Strategy: User-Owned vs. System-Owned
-1. **User-Owned Files** (`.context/RAW_REQUIREMENTS.md`, `.context/SPEC.md`, `.context/ROADMAP.md`): 
-   - **PRESERVE ONLY**: Never delete or overwrite. 
-   - If missing: Create from template. 
-   - If exists: Skip or logically merge non-destructive content (e.g., adding missing headings without altering user data).
-2. **System-Owned Files** (Protocols in `.cursor/rules/`, Skills in `.cursor/skills/`):
-   - **SYNC & UPDATE**: Treat these as "logic engines" that should be kept up to date with the latest global skill templates.
-   - If outdated: Update to the latest version from the global `templates/` to ensure the AI's "brain" and "tools" are running the latest logic.
-   - If customized: Notify the user before overwriting.
-
-### B. Deployment Path
-1. Identify the tool environment:
-   - For **Cursor**: Use `.cursor/rules/` and `.cursor/skills/`.
-   - For **General AI**: Use project root or `.rules/`.
-2. Report the result of the "Smart Sync" (what was created, what was updated, and what was preserved).
-
-[See `templates/` directory for raw markdown files to be copied.]
+[See `templates/` directory for the raw assets.]
