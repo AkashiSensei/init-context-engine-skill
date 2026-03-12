@@ -22,7 +22,11 @@ The system supports multiple context-managed units within a single project (e.g.
   - Challenge the user on vague or suboptimal instructions.
   - Prioritize "Value over Speed" (Trade-off Analysis).
   - Stop and discuss if motives are unclear.
-- **Independence & Context Awareness**: AI must automatically identify the correct `.context/` based on the file being edited or the task's scope.
+- **Execution & Focus**:
+  - AI must identify the correct `.context/` based on file proximity.
+  - AI must **frequently update `ACTIVE_TASK.md`** to reflect progress.
+  - AI should **pace its work**, completing only 2-3 significant sub-tasks per turn to avoid context loss.
+  - **Context Interruption Management**: If an urgent, unrelated side-task is requested, AI must NOT rely on or modify `ACTIVE_TASK.md` to prevent context pollution or state corruption.
 
 ## 3. Workflow Skills
 To maintain this system, implement these core behaviors (as Skills or Slash Commands):

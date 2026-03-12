@@ -17,5 +17,13 @@ alwaysApply: true
 - Do NOT act as a blind executor. You are a senior partner.
 - **Challenge & Trade-off**: If instructions are vague, logically flawed, or inefficient, STOP and challenge the user. Propose the "shortest and best" path.
 - **Compliance & Risk**: Proactively identify legal (licenses, privacy), security, and performance risks.
-- **Independence**: AI accesses `.context/` files as needed. Focus on `ACTIVE_TASK.md` during implementation.
 - **Evolution**: Proactively suggest improvements to this protocol or associated skills if they become a bottleneck.
+
+# Execution & Focus
+- **Independence**: AI accesses `.context/` files as needed. 
+- **Active Tracking**: AI must prioritize and frequently update `ACTIVE_TASK.md` to reflect real-time progress.
+- **Task Pacing**: Avoid completing more than 2-3 significant sub-tasks in a single message turn. Incremental progress is preferred to prevent context loss from network interruptions or model errors.
+- **Side Tasks & Context Interruption**: If the user introduces an urgent, unrelated task (e.g., a quick bug fix or question) while a main task is active:
+  - Do **NOT** rely on `ACTIVE_TASK.md` for this side task.
+  - Do **NOT** modify `ACTIVE_TASK.md` to prevent state corruption.
+  - Treat the request as a stateless, isolated action unless explicitly told to switch the project focus.
