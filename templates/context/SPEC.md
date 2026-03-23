@@ -1,4 +1,5 @@
 # SPECIFICATION (Source of Truth)
+(Focus on REQUIREMENTS and CONSTRAINTS. Avoid implementation details.)
 
 ## 1. Project Overview
 [Briefly define the app and its purpose.]

@@ -1,7 +1,13 @@
 # ACTIVE_TASK
-(Currently focused task and focus checkpoints)
+(Current execution focus. Includes implementation details and functional logic.)
 
-## Task: Initial Implementation
+## Goal
+[Concise one-liner]
+
+## Implementation Details
+[Capture specific functional requirements and implementation ideas here]
+
+## Task Checklist
 - [ ] Task sub-item 1
 - [ ] Task sub-item 2
 
