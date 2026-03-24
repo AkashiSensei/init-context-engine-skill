@@ -13,4 +13,5 @@ Cleanup the workspace after a task is completed.
 3. Move content of `ACTIVE_TASK.md` to `[Context Root]/.context/archive/YYYYMMDD_TaskName.md`.
 4. Update `ROADMAP.md`: Add a single-line entry: `Date | TaskName | Key Impact`.
 5. Reset `ACTIVE_TASK.md`: Keep only the minimalist template for the next task.
-6. Output: "Task archived in [Local Path]. Roadmap updated."
+6. **Trigger commit-helper**: Call `commit-helper` to finalize the work in Git and generate a PR description.
+7. Output: "Task archived. Roadmap updated. Committing changes..."

@@ -22,6 +22,7 @@ Goal: Create a high-focus "cache" in `ACTIVE_TASK.md` for a specific feature or 
    - **Isolation**: During the planning stage, ALL modifications must be restricted to `.context` files (ACTIVE_TASK.md, SPEC.md, RAW_REQUIREMENTS.md). **DO NOT** modify any source code until explicitly authorized.
 5. **Draft ACTIVE_TASK.md**:
    - **Goal**: Concise one-liner.
+   - **Issue Reference**: Capture any Issue links or IDs provided by the user.
    - **Focusing Files**: List 3-5 primary files.
    - **Implementation Details**: Capture specific functional requirements and implementation ideas here.
    - **Test Plan**: Define the testing strategy (Unit/UI/Manual) for this specific task.

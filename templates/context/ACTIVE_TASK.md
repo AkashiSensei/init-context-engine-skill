@@ -4,6 +4,9 @@
 ## Goal
 [Concise one-liner]
 
+## Issue Reference
+[Issue links or IDs]
+
 ## Implementation Details
 [Capture specific functional requirements and implementation ideas here]
 

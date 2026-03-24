@@ -15,7 +15,7 @@ This skill is a **Meta-Tool** used to bootstrap or update an AI-native engineeri
 The following components are deployed/synchronized by this skill:
 - **Memory Root**: `.context/` (RAW, SPEC, ROADMAP, ACTIVE_TASK).
 - **Brain Core**: `context-protocol.mdc` (Defines the "Independent Thinking Engineer" identity, language, and execution pacing).
-- **Workflow Tools**: `sync-spec`, `start-task`, `archive-task` (Standardized operational skills).
+- **Workflow Tools**: `sync-spec`, `start-task`, `archive-task`, `commit-helper` (Standardized operational skills).
 
 ## 3. Smart Sync & Reconcile Logic
 When executing this skill, perform a **Safe Sync** using these priorities:
