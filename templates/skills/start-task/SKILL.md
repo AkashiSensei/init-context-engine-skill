@@ -20,12 +20,14 @@ Goal: Create a high-focus "cache" in `ACTIVE_TASK.md` for a specific feature or 
      - The task introduces new global requirements or architectural constraints.
      - *Think like an Engineer*: Evaluate if updating SPEC is truly necessary for the project's long-term health. Avoid cluttering SPEC with implementation details.
    - **Isolation**: During the planning stage, ALL modifications must be restricted to `.context` files (ACTIVE_TASK.md, SPEC.md, RAW_REQUIREMENTS.md). **DO NOT** modify any source code until explicitly authorized.
-5. **Draft ACTIVE_TASK.md**:
-   - **Goal**: Concise one-liner.
-   - **Issue Reference**: Capture any Issue links or IDs provided by the user.
-   - **Focusing Files**: List 3-5 primary files.
-   - **Implementation Details**: Capture specific functional requirements and implementation ideas here.
-   - **Test Plan**: Define the testing strategy (Unit/UI/Manual) for this specific task.
-   - **Technical Context**: Extract ONLY essential snippets/constraints from SPEC.
-   - **TODOs**: High-density implementation steps.
+5. **Authoritative Reconstruction of ACTIVE_TASK.md**:
+   - **Structure Force**: Regardless of the current state of `ACTIVE_TASK.md`, re-create it using the mandatory structure:
+     - `# ACTIVE_TASK`
+     - `## Goal`: Concise one-liner.
+     - `## Issue Reference`: Capture Issue links or IDs.
+     - `## Implementation Details`: Capture specific functional requirements and implementation ideas.
+     - `## Test Plan`: Define testing strategy (Unit/UI/Manual).
+     - `## Focusing Files`: List 3-5 primary files.
+     - `## Technical Context`: Extract ONLY essential snippets/constraints from SPEC.
+     - `## Task Checklist`: High-density implementation steps.
 6. **Output & Approval**: Display the proposed plan and wait for the user to explicitly say "Start Implementation" or approve the plan before touching any code.
