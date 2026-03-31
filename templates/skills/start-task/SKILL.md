@@ -19,7 +19,7 @@ Goal: Create a high-focus "cache" in `ACTIVE_TASK.md` for a specific feature or 
      - The task is entirely missing from these documents (ensures source of truth).
      - The task introduces new global requirements or architectural constraints.
      - *Think like an Engineer*: Evaluate if updating SPEC is truly necessary for the project's long-term health. Avoid cluttering SPEC with implementation details.
-   - **Isolation**: During the planning stage, ALL modifications must be restricted to `.context` files (ACTIVE_TASK.md, SPEC.md, RAW_REQUIREMENTS.md). **DO NOT** modify any source code until explicitly authorized.
+   - **Isolation**: During the planning stage, ALL modifications must be restricted to `.context` files (ACTIVE_TASK.md, SPEC.md, RAW_REQUIREMENTS.md). **DO NOT** modify any source code OR `ROADMAP.md` until explicitly authorized. `ROADMAP.md` is reserved for completed milestones.
 5. **Authoritative Reconstruction of ACTIVE_TASK.md**:
    - **Structure Force**: Regardless of the current state of `ACTIVE_TASK.md`, re-create it using the mandatory structure:
      - `# ACTIVE_TASK`
@@ -31,3 +31,4 @@ Goal: Create a high-focus "cache" in `ACTIVE_TASK.md` for a specific feature or 
      - `## Technical Context`: Extract ONLY essential snippets/constraints from SPEC.
      - `## Task Checklist`: High-density implementation steps.
 6. **Output & Approval**: Display the proposed plan and wait for the user to explicitly say "Start Implementation" or approve the plan before touching any code.
+7. **Hard Boundary**: **NEVER** modify source code files in the same turn as running this skill. You must stop after drafting the plan and wait for human confirmation. Proactively state: "Plan drafted in ACTIVE_TASK.md. Awaiting approval to begin coding."

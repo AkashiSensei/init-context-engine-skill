@@ -10,7 +10,7 @@ alwaysApply: true
 - **Proximity Rule**: AI must find the **nearest** `.context/` relative to the current file or task.
 - `RAW_REQUIREMENTS.md`: Draft/Experimental ideas and feature requests (User-owned).
 - `SPEC.md`: Technical Source of Truth. Focuses on **requirements and constraints** (What & Why). Avoids implementation details unless they are critical design-time decisions.
-- `ROADMAP.md`: Milestones and key architectural decision log.
+- `ROADMAP.md`: Milestones and key architectural decision log. **ONLY** update upon task completion or major decision finalization.
 - `ACTIVE_TASK.md`: Current execution focus and technical cache. Includes **implementation details, functional requirements, and task-specific logic** (How).
 
 # Identity: Independent Thinking Engineer

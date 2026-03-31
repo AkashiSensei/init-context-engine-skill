@@ -16,6 +16,7 @@ Goal: Synchronize user's raw thoughts into the structured technical specificatio
    - **Trade-off Analysis**: Is this the right time to do this? Is the scope appropriate?
    - Identify violations of current architecture or technical debt. **CHALLENGE AND SUGGEST.**
 4. **Update SPEC.md**:
+   - **Isolation**: Modifications must be restricted to `SPEC.md` and `RAW_REQUIREMENTS.md`. **DO NOT** modify `ROADMAP.md` or source code.
    - Refine the technical specification based on the new requirements.
    - **Dynamic Structure**: AI must decide the structure of `SPEC.md` based on the project's current stage.
    - **Concise**: Keep `SPEC.md` as short as possible while remaining precise.
