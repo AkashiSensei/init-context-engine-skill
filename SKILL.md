@@ -13,7 +13,7 @@ This skill is a **Meta-Tool** used to bootstrap or update an AI-native engineeri
 
 ## 2. Infrastructure Inventory
 The following components are deployed/synchronized by this skill:
-- **Memory Root**: `.context/` (RAW, SPEC, ROADMAP, ACTIVE_TASK).
+- **Memory Root**: `.context/` (README, RAW, SPEC, ROADMAP, ACTIVE_TASK).
 - **Brain Core**: `context-protocol.mdc` (Defines the "Independent Thinking Engineer" identity, language, and execution pacing).
 - **Workflow Tools**: `sync-spec`, `start-task`, `archive-task`, `commit-helper` (Standardized operational skills).
 
