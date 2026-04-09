@@ -1,35 +1,86 @@
 ---
-name: init-context-engine
-description: Universal "Independent Thinking" context management system initializer. Creates .context/ files and core engineering protocols in any workspace. Use to bootstrap a new project with structured memory and critical thinking logic.
+name: project-context-meta-skill
+description: Project context management meta-skill. Bootstrap and maintain AI-native engineering environments with decoupled components.
 ---
 
-# Skill: Init Context Engine
-This skill is a **Meta-Tool** used to bootstrap or update an AI-native engineering environment. It establishes the infrastructure for structured memory and independent collaboration.
+# Skill: Project Context Meta-Skill
 
-## 1. Core Mission
-- **Bootstrap**: Create `.context/` memory structures and `.cursor/` (or equivalent) logic engines.
-- **Sync & Update**: Ensure local rules and skills are aligned with the latest global templates.
-- **Architecture**: Enforce the **"Proximity Rule"** for nested context support.
+A **Meta-Tool** for bootstrapping and maintaining AI-native engineering environments. Provides three independent components that can be installed separately or in any combination.
 
-## 2. Infrastructure Inventory
-The following components are deployed/synchronized by this skill:
-- **Memory Root**: `.context/` (README, RAW, SPEC, ROADMAP, ACTIVE_TASK).
-- **Brain Core**: `context-protocol.mdc` (Defines the "Independent Thinking Engineer" identity, language, and execution pacing).
-- **Workflow Tools**: `sync-spec`, `start-task`, `archive-task`, `commit-helper` (Standardized operational skills).
+## 1. Core Capabilities
 
-## 3. Smart Sync & Reconcile Logic
-When executing this skill, perform a **Safe Sync** using these priorities:
-1. **User-Owned (Strict Preserve)**:
-   - Files in `.context/` (RAW, SPEC, ROADMAP, ACTIVE_TASK).
-   - **NEVER** overwrite. Create ONLY if missing.
-2. **Logic-Owned (Smart Reconcile)**:
-   - Protocols (`.cursor/rules/`) and Workflow Skills (`.cursor/skills/`).
-   - **DO NOT** blindly overwrite.
-   - **Analyze Diff**: Identify project-specific customizations vs. global logic updates.
-   - **Merge & Propose**: Integrate latest global improvements while preserving local customizations.
-   - **User Confirmation**: Present a concise "Logic Update Report" and ask for permission before applying changes.
+### Context System (Project-Level)
+Creates structured memory and governance files in `.context/`:
+- **README.md**: Directory structure and governance rules
+- **RAW_REQUIREMENTS.md**: User's raw ideas and feature requests
+- **SPEC.md**: Technical specifications (What & Why)
+- **ROADMAP.md**: Milestones and decision log
+- **ACTIVE_TASK.md**: Current execution focus
 
-## 4. Operational Philosophy
-Once initialized, the AI's behavior is governed by the **installed `context-protocol.mdc`**. The installer itself does not dictate behavior post-installation.
+### Skill Template (Tool-Level)
+Standardized workflow skills:
+- **sync-spec**: Synchronize specifications
+- **start-task**: Begin new tasks
+- **archive-task**: Complete and archive tasks
+- **commit-helper**: Generate conventional commits
 
-[See `templates/` directory for the raw assets.]
+### Prompts (Behavior-Level)
+Defines AI behavior and interaction patterns:
+- **critical-thinking.md**: Critical thinking engineer persona
+
+## 2. Design Philosophy
+
+**Decoupled Components**: Each part is independent:
+- Install all three ✓
+- Install only Context System ✓
+- Install only Skills ✓
+- Install only Prompts ✓
+- Any combination ✓
+
+**Proximity Rule**: Always use the nearest `.context/` relative to current file.
+
+## 3. Installation
+
+When this skill runs, it installs components to the target project:
+
+| Component | Default Location |
+|-----------|-----------------|
+| Context System | `.context/` |
+| Skills | `.cursor/skills/` (or equivalent tool-specific path) |
+| Prompts | `.context/prompts/` |
+
+**Note**: Actual installation location is determined by the tool executing this skill.
+
+## 4. Sync & Update Logic
+
+Perform a **Safe Sync** with these priorities:
+
+1. **Context System (User-Owned)**:
+   - Files in `.context/` are **user-owned**
+   - **NEVER** overwrite existing files
+   - Create ONLY if missing (`README.md`, `RAW_REQUIREMENTS.md`, `SPEC.md`, `ROADMAP.md`)
+   - **Note**: `ACTIVE_TASK.md` is managed by `start-task` skill, do not create during installation.
+
+2. **Skills (Logic-Owned)**:
+   - Analyze diff between local and global versions
+   - Identify project-specific customizations vs. global updates
+   - Merge changes, preserve local customizations
+   - **Request user confirmation** before applying
+
+3. **Prompts (User-Selectable)**:
+   - List available prompts
+   - User selects which to install
+   - Install to `.context/prompts/`
+   - Never overwrite existing prompts
+
+## 5. Usage
+
+User can request:
+- "Install context system" → Creates `.context/` structure
+- "Install skills" → Adds workflow skills
+- "Install prompts" → Adds behavior prompts
+- "Install everything" → All three components
+
+Components are independent—install only what you need.
+
+[See component directories for source files: `context-system/`, `skill-template/`, `prompts/`]
