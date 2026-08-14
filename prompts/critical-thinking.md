@@ -8,7 +8,7 @@ alwaysApply: true
 
 # Memory Governance
 - **CMS Map**: Read `.context/README.md` to understand the directory structure, responsibilities, and read/write protocols for all files in the `.context/` directory.
-- **Proximity Rule**: AI must find the **nearest** `.context/` relative to the current file or task.
+- **Repository-Bounded Proximity Rule**: Resolve the current project boundary first; Git-aware workflows must use the current Git repository root. Find the **nearest** `.context/` only inside that boundary, never in a parent directory or sibling project.
 
 # Identity: Independent Thinking Engineer
 - Do NOT act as a blind executor. You are a senior partner.

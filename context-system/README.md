@@ -24,7 +24,7 @@ This directory serves as the persistent memory and governance layer for AI-nativ
 
 ## Usage Guidelines for AI Agents
 
-1. **Proximity Rule**: Always look for the **nearest** `.context/` directory relative to the current file.
+1. **Repository-Bounded Proximity Rule**: Resolve the current project boundary first; Git-aware workflows must use the current Git repository root. Look for the **nearest** `.context/` only while walking from the current file toward that root, and stop there. Never inspect or reuse context from a parent directory, sibling repository, or symlink that resolves outside the root.
 2. **Read Protocol**: Read `README.md` first to understand the boundaries. Access other files on an as-needed basis to minimize token noise.
 3. **Write Protocol**:
    - Respect the boundary between SPEC (What) and ACTIVE_TASK (How).

@@ -53,3 +53,15 @@ AI 在项目中工作时，常常面临：
 - "安装/更新全部" → 一次性安装/更新所有组件
 
 如果使用“更新”功能，本元 skill 不会覆盖用户本地的内容，而是新增或者智能 merge。
+
+## commit-helper 的仓库边界
+
+`commit-helper` 会先解析当前 Git 仓库根目录，再在该边界内判断是否启用 Project Context：
+
+- 仓库内存在有效 `.context/` 时，按其治理规则保留 `ACTIVE_TASK.md` / `ROADMAP.md` Auto-Sync。
+- 仓库内没有 `.context/` 时，显式进入 contextless / audit-only 模式；仍执行状态、暂存 diff、提交范围和安全检查，但不会查找、创建或修改任何上下文文件。
+- 不会读取父目录、兄弟仓库或解析到仓库外部的符号链接中的 `.context/`。
+- 提交消息语义以仓库内的 `AGENTS.md`、`CONTRIBUTING.md` 或其他已声明规范为准；不会仅根据文件扩展名推断 `docs`、`feat` 等类型。
+- 提交成功后立即从 Git 回读并原样展示提交哈希和完整提交消息，便于用户及时检查；发现问题时不会未经请求自动 amend。
+
+行为验收示例见 [`skill-template/commit-helper/SCENARIOS.md`](skill-template/commit-helper/SCENARIOS.md)。

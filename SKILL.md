@@ -22,7 +22,7 @@ Standardized workflow skills:
 - **sync-spec**: Synchronize specifications
 - **start-task**: Begin new tasks
 - **archive-task**: Complete and archive tasks
-- **commit-helper**: Commit task-relevant changes using project commit style
+- **commit-helper**: Commit task-relevant changes using repository-local style, with optional project-context Auto-Sync
 
 ### Prompts (Behavior-Level)
 Defines AI behavior and interaction patterns:
@@ -37,7 +37,7 @@ Defines AI behavior and interaction patterns:
 - Install only Prompts ✓
 - Any combination ✓
 
-**Proximity Rule**: Always use the nearest `.context/` relative to current file.
+**Repository-Bounded Proximity Rule**: Resolve the current project boundary before context discovery; Git-aware workflows must use the current Git repository root. Use the nearest `.context/` only while walking inside that boundary, and never borrow context from a parent directory or sibling project. A workflow that supports contextless operation must not synthesize context just because none is present.
 
 ## 3. Installation
 
